@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Personal Info</title>
+    <script>
+        let people = [
+            { id: 1, fullName: "James Smith", gender: "male", email: "james.smith@newemail.com", studentId: "S00223456" },
+            { id: 2, fullName: "Olivia Brown", gender: "female", email: "olivia.brown@newemail.com", studentId: "S00223457" },
+            { id: 3, fullName: "Liam Davis", gender: "male", email: "liam.davis@newemail.com", studentId: "S00223458" }
+        ];
+
+        let currentPersonIndex = 0;
+
+        function displayPersonInfo() {
+            let person = people[currentPersonIndex];
+            document.getElementById("personName").value = person.fullName;
+            document.getElementById("personGender").value = person.gender;
+            document.getElementById("personEmail").value = person.email;
+            document.getElementById("personStudentId").value = person.studentId;
+
+            document.getElementById("personInfoDisplay").innerHTML = `
+                Full Name: ${person.fullName}<br>
+                Gender: ${person.gender}<br>
+                Email: ${person.email}<br>
+                Student ID: ${person.studentId}
+            `;
+        }
+
+        function updatePersonInfo() {
+            let person = people[currentPersonIndex];
+            person.fullName = document.getElementById("personName").value;
+            person.gender = document.getElementById("personGender").value;
+            person.email = document.getElementById("personEmail").value;
+            person.studentId = document.getElementById("personStudentId").value;
+
+            displayPersonInfo();
+        }
+
+        function switchPerson(personIndex) {
+            currentPersonIndex = personIndex;
+            displayPersonInfo();
+        }
+
+        window.onload = displayPersonInfo;
+    </script>
+</head>
+<body>
+    <h1>Update Personal Information</h1>
+
+    <select onchange="switchPerson(this.value)" id="personSelector">
+        <option value="0">James Smith</option>
+        <option value="1">Olivia Brown</option>
+        <option value="2">Liam Davis</option>
+    </select>
+
+    <form onsubmit="event.preventDefault(); updatePersonInfo();">
+        <input type="text" id="personName" placeholder="Enter Full Name"><br><br>
+        <input type="text" id="personGender" placeholder="Enter Gender"><br><br>
+        <input type="text" id="personEmail" placeholder="Enter Email"><br><br>
+        <input type="text" id="personStudentId" placeholder="Enter Student ID"><br><br>
+
+        <button type="submit">Update Info</button>
+    </form>
+
+    <br>
+
+    <h3>Updated Person Info:</h3>
+    <div id="personInfoDisplay">
+        Full Name: James Smith<br>
+        Gender: male<br>
+        Email: james.smith@newemail.com<br>
+        Student ID: S00223456
+    </div>
+</body>
+</html>

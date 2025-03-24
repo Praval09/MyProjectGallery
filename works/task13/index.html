@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            text-align: left;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            margin-left: 50px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #result{
+            margin-left: 45px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Random Number Generator</h2>
+   
+    <input id="num1" placeholder="Min">
+
+    <input  id="num2" placeholder="Max">
+    <br><br>
+    <button onclick="generate_Random()">Generate Random</button>
+
+    <div id="result"></div>
+
+    <script>
+        let colors=["orange","red","yellow","green","gray","pink","coral"]
+        function vanishOutput() {
+            setTimeout(() => {
+                document.getElementById("result").innerText = "";
+            }, 5000);
+        }
+        function generate_Random() {
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+            
+            let random_Number = Math.floor(Math.random() * (b - a)) + a;
+            document.getElementById("result").innerText = "Random Number: " + random_Number;
+            let size=colors.length;
+            let index=Math.floor(Math.random()*size)
+            document.getElementById("result").style ="color:"+colors[index];
+            vanishOutput();
+
+        }
+    </script>
+
+</body>
+</html>

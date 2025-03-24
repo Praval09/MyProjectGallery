@@ -1,0 +1,33 @@
+
+1
+body {
+    background-color: black;
+}
+.heading {
+    background-color: brown;
+    text-align: center;
+    margin: 0.5em;
+    border-radius: 0.5cap;
+    color: white;
+}
+.content-body {
+        background-color: lightgray;
+ margin-left: 20%;
+    margin-right: 20%;
+margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1.2em;
+    padding: 100px;
+    border-radius: 0.5cap;
+    
+}
+.mybutton {
+    text-align: center;
+    margin: 1em 0;
+}
+button {
+    font-size: 1.2em;
+    display: block;
+background-color:green;
+    margin: 0 auto;
+}

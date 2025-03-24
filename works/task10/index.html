@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Two Numbers</title>
+</head>
+<body>
+
+    <input type="number" id="firstNum" placeholder="Enter number 1">
+    <input type="number" id="secondNum" placeholder="Enter number 2">
+    <button onclick="computeSum()">Calculate Sum</button>
+
+    <div id="sumResult"></div>
+
+    <script>
+        function computeSum() {
+            const firstNumber = parseFloat(document.getElementById('firstNum').value);
+            const secondNumber = parseFloat(document.getElementById('secondNum').value);
+            
+            if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+                const totalSum = firstNumber + secondNumber;
+                document.getElementById('sumResult').textContent = 'Sum: ' + totalSum;
+            } else {
+                document.getElementById('sumResult').textContent = 'Please enter valid numbers';
+            }
+        }
+    </script>
+
+</body>
+</html>

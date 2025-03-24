@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fields</title>
+    <style>
+        #a{
+            display: inline-block;
+        }
+        #i{
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function update() {
+            var F = document.getElementById("a");
+            var i = document.getElementById("i");
+            i.value = F.value.toUpperCase();
+        }
+    </script>
+
+</head>
+<body>
+   
+    <input type="text" id="a" onkeyup="update()">
+    <input type="text" id="i" disabled><br><br>
+</body>
+</html>
